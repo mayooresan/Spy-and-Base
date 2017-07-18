@@ -1,14 +1,18 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Home BaseVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeBaseVC" customModule="Spy_and_Base" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -16,11 +20,56 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="38R-x0-bFl">
+                                <rect key="frame" x="73" y="318" width="228" height="30"/>
+                                <state key="normal" title="SEND OUR SPY TO ENEMY BASE"/>
+                                <connections>
+                                    <segue destination="O22-aI-hoB" kind="presentation" identifier="sendSpySegue" id="oRH-MW-HDU"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="38R-x0-bFl" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AUa-GA-l5I"/>
+                            <constraint firstItem="38R-x0-bFl" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="XMj-9M-hwQ"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="68" y="136"/>
+        </scene>
+        <!--Enemy BaseVC-->
+        <scene sceneID="uTa-Q4-aVM">
+            <objects>
+                <viewController id="O22-aI-hoB" customClass="EnemyBaseVC" customModule="Spy_and_Base" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="g3e-n4-G7x"/>
+                        <viewControllerLayoutGuide type="bottom" id="lHW-d9-qDi"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1JI-YL-Rui">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k9g-xd-DL0">
+                                <rect key="frame" x="67" y="318" width="241" height="30"/>
+                                <state key="normal" title="HACK AND SEND MESSAGE HOME"/>
+                                <connections>
+                                    <action selector="sendingMessage:" destination="O22-aI-hoB" eventType="touchUpInside" id="1dJ-Pb-RHb"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="k9g-xd-DL0" firstAttribute="centerX" secondItem="1JI-YL-Rui" secondAttribute="centerX" id="3uf-ZP-vSs"/>
+                            <constraint firstItem="k9g-xd-DL0" firstAttribute="centerY" secondItem="1JI-YL-Rui" secondAttribute="centerY" id="LEY-PC-j5E"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="evF-Zq-sQO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="815" y="137"/>
         </scene>
     </scenes>
 </document>
